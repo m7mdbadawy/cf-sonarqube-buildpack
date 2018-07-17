@@ -1,5 +1,6 @@
 import os
 import json
+import subprocess
 
 vcap = json.loads(os.getenv('VCAP_SERVICES'))
 
