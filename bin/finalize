@@ -15,4 +15,5 @@ ln -s ../../sonar.properties sonar.properties
 
 echo "-----> Creating start script"
 cp ${BIN_DIR}/../startSonarQube.sh ${BUILD_DIR}/startSonarQube.sh
+cp ${BIN_DIR}/../set-db-env-variables.py ${BUILD_DIR}/set-db-env-variables.py
 chmod +x ${BUILD_DIR}/startSonarQube.sh
