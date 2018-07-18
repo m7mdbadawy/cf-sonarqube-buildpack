@@ -7,7 +7,8 @@ vcap = json.loads(os.getenv('VCAP_SERVICES'))
 cred = vcap['p-mysql'][0]['credentials']
 
 print "loaded cred is " , cred
-os.environ['JDBC_URL'] = cred['jdbcUrl']
+os.environ['JDBC_URL'] = cred['jdbcUrl'] + "&useUnicode=true&characterEncoding=utf8&rewriteBatchedStatements=true
+"
 os.environ['JDBC_USERNAME'] = cred['username']
 os.environ['JDBC_PASSWORD'] = cred['password']
 
