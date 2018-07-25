@@ -26,7 +26,7 @@ mv ${BUILD_DIR}/sonarqube-${SONARQUBE_VERSION} ${BUILD_DIR}/sonarqube # Remove v
 
 if [ -d "${BUILD_DIR}/plugins" ]; then
   # Control will enter here if $DIRECTORY exists.
-  cp "$BUILD_DIR/plugins/*.jar" "$BUILD_DIR/sonarqube/extensions/plugins/"
+  cp $BUILD_DIR/plugins/*.jar $BUILD_DIR/sonarqube/extensions/plugins/
 fi
 
 if [[ -f ${BUILD_DIR}/sonar-plugins.yml ]]; then
