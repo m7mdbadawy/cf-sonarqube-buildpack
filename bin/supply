@@ -24,6 +24,11 @@ unzip -q ${BUILD_DIR}/sonarqube-${SONARQUBE_VERSION}.zip -d ${BUILD_DIR}
 
 mv ${BUILD_DIR}/sonarqube-${SONARQUBE_VERSION} ${BUILD_DIR}/sonarqube # Remove version suffix"
 
+if [ -d "${BUILD_DIR}/plugins" ]; then
+  # Control will enter here if $DIRECTORY exists.
+  cp "$BUILD_DIR/plugins/*.jar" "$BUILD_DIR/sonarqube/extensions/plugins/"
+fi
+
 if [[ -f ${BUILD_DIR}/sonar-plugins.yml ]]; then
     echo "-----> Installing plugins"
 
